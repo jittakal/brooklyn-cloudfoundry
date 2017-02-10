@@ -18,8 +18,6 @@
  */
 package org.apache.brooklyn.cloudfoundry.location;
 
-import static com.google.api.client.util.Preconditions.checkNotNull;
-
 import org.apache.brooklyn.cloudfoundry.location.paas.PaasLocationConfig;
 import org.apache.brooklyn.util.core.config.ConfigBag;
 import org.cloudfoundry.operations.CloudFoundryOperations;
@@ -29,6 +27,8 @@ import org.cloudfoundry.reactor.client.ReactorCloudFoundryClient;
 import org.cloudfoundry.reactor.tokenprovider.PasswordGrantTokenProvider;
 
 import com.google.common.base.Supplier;
+
+import static com.google.common.base.Preconditions.checkNotNull;
 
 public class CloudFoundryClientRegistryImpl implements CloudFoundryClientRegistry {
 

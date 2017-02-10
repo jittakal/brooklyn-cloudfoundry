@@ -18,9 +18,6 @@
  */
 package org.apache.brooklyn.cloudfoundry.location;
 
-import static com.google.api.client.util.Preconditions.checkArgument;
-import static com.google.api.client.util.Preconditions.checkNotNull;
-
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
@@ -59,6 +56,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.google.common.collect.Iterables;
+
+import static com.google.common.base.Preconditions.checkArgument;
+import static com.google.common.base.Preconditions.checkNotNull;
 
 public class CloudFoundryPaasLocation extends AbstractLocation
         implements PaasLocation, CloudFoundryPaasLocationConfig {
