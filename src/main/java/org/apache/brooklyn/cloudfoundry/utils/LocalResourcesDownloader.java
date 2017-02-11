@@ -34,7 +34,7 @@ import java.util.Collection;
 public class LocalResourcesDownloader {
 
     public static final String BROOKLYN_DIR = "brooklyn";
-    public static final Logger log = LoggerFactory
+    private static final Logger log = LoggerFactory
             .getLogger(LocalResourcesDownloader.class);
 
     public static File downloadResourceInLocalDir(String saveAs, Collection<String> urls) {

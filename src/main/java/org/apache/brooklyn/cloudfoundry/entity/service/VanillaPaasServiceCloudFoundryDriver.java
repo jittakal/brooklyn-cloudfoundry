@@ -23,6 +23,8 @@ import org.apache.brooklyn.cloudfoundry.entity.EntityPaasCloudFoundryDriver;
 import org.apache.brooklyn.cloudfoundry.location.CloudFoundryPaasLocation;
 import org.apache.brooklyn.util.collections.MutableMap;
 import org.apache.brooklyn.util.exceptions.PropagatedRuntimeException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
 import java.util.Map;
@@ -30,6 +32,8 @@ import java.util.Map;
 @Beta
 public class VanillaPaasServiceCloudFoundryDriver extends EntityPaasCloudFoundryDriver
         implements VanillaPaasServiceDriver {
+
+    private static final Logger log = LoggerFactory.getLogger(VanillaPaasServiceCloudFoundryDriver.class);
 
     protected String serviceInstanceId;
 

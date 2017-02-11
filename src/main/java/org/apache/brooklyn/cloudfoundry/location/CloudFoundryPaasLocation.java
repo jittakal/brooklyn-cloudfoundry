@@ -46,7 +46,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 public class CloudFoundryPaasLocation extends AbstractLocation
         implements PaasLocation, CloudFoundryPaasLocationConfig {
 
-    public static final Logger log = LoggerFactory.getLogger(CloudFoundryPaasLocation.class);
+    private static final Logger log = LoggerFactory.getLogger(CloudFoundryPaasLocation.class);
     private static final String VCAP_SERVICES = "VCAP_SERVICES";
 
     private CloudFoundryOperations client;

@@ -27,7 +27,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 public abstract class EntityPaasCloudFoundryDriver implements EntityPaasDriver {
 
-    public static final Logger log = LoggerFactory.getLogger(EntityPaasCloudFoundryDriver.class);
+    private static final Logger log = LoggerFactory.getLogger(EntityPaasCloudFoundryDriver.class);
 
     private final CloudFoundryPaasLocation location;
     private CloudFoundryEntityImpl entity;

@@ -46,7 +46,7 @@ import java.util.Map;
 public class VanillaPaasApplicationCloudFoundryDriver extends EntityPaasCloudFoundryDriver
         implements VanillaPaasApplicationDriver {
 
-    public static final Logger log = LoggerFactory
+    private static final Logger log = LoggerFactory
             .getLogger(VanillaPaasApplicationCloudFoundryDriver.class);
 
     private String applicationName;

@@ -34,7 +34,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 public class CloudFoundryPaasLocationResolver implements LocationResolver {
 
-    public static final Logger log = LoggerFactory
+    private static final Logger log = LoggerFactory
             .getLogger(CloudFoundryPaasLocationResolver.class);
 
     public static final String CLOUD_FOUNDRY = "cloudfoundry";
