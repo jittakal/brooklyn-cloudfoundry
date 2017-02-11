@@ -18,15 +18,14 @@
  */
 package org.apache.brooklyn.cloudfoundry.entity.service;
 
-import java.util.Map;
-
+import com.google.common.annotations.Beta;
 import org.apache.brooklyn.api.entity.Entity;
 import org.apache.brooklyn.cloudfoundry.entity.CloudFoundryEntityImpl;
 import org.apache.brooklyn.util.collections.MutableMap;
 import org.apache.brooklyn.util.text.Identifiers;
 import org.apache.brooklyn.util.text.Strings;
 
-import com.google.common.annotations.Beta;
+import java.util.Map;
 
 @Beta
 public class VanillaCloudFoundryServiceImpl extends CloudFoundryEntityImpl implements VanillaCloudFoundryService {

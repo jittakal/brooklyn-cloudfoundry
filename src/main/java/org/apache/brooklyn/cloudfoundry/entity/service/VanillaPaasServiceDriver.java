@@ -19,9 +19,8 @@
 package org.apache.brooklyn.cloudfoundry.entity.service;
 
 
-import org.apache.brooklyn.cloudfoundry.entity.EntityPaasDriver;
-
 import com.google.common.annotations.Beta;
+import org.apache.brooklyn.cloudfoundry.entity.EntityPaasDriver;
 
 @Beta
 public interface VanillaPaasServiceDriver extends EntityPaasDriver {

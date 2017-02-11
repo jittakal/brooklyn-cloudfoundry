@@ -18,14 +18,13 @@
  */
 package org.apache.brooklyn.cloudfoundry.location.domain;
 
-import static com.google.common.base.Preconditions.checkNotNull;
+import com.google.common.reflect.TypeToken;
+import org.apache.brooklyn.util.core.flags.TypeCoercions;
 
 import java.util.List;
 import java.util.Map;
 
-import org.apache.brooklyn.util.core.flags.TypeCoercions;
-
-import com.google.common.reflect.TypeToken;
+import static com.google.common.base.Preconditions.checkNotNull;
 
 
 public class VcapService {

@@ -18,10 +18,7 @@
  */
 package org.apache.brooklyn.cloudfoundry.utils;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Collection;
-
+import com.google.common.base.Throwables;
 import org.apache.brooklyn.util.core.ResourceUtils;
 import org.apache.brooklyn.util.exceptions.PropagatedRuntimeException;
 import org.apache.brooklyn.util.os.Os;
@@ -30,7 +27,9 @@ import org.apache.commons.io.FileUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.google.common.base.Throwables;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Collection;
 
 public class LocalResourcesDownloader {
 

@@ -19,14 +19,14 @@
 package org.apache.brooklyn.cloudfoundry.entity;
 
 
-import java.util.Map;
-
 import org.apache.brooklyn.api.entity.Entity;
 import org.apache.brooklyn.util.collections.MutableMap;
 import org.apache.brooklyn.util.text.Identifiers;
 import org.apache.brooklyn.util.text.Strings;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.Map;
 
 public class VanillaCloudFoundryApplicationImpl extends CloudFoundryEntityImpl
         implements VanillaCloudFoundryApplication {

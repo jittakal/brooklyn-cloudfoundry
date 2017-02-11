@@ -18,13 +18,12 @@
  */
 package org.apache.brooklyn.cloudfoundry.entity.service.mysql;
 
-import java.util.Map;
-
+import com.google.common.annotations.Beta;
 import org.apache.brooklyn.api.entity.Entity;
 import org.apache.brooklyn.cloudfoundry.entity.service.VanillaCloudFoundryServiceImpl;
 import org.apache.brooklyn.util.collections.MutableMap;
 
-import com.google.common.annotations.Beta;
+import java.util.Map;
 
 @Beta
 public class CloudFoundryMySqlServiceImpl extends VanillaCloudFoundryServiceImpl

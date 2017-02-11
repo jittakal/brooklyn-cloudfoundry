@@ -19,13 +19,9 @@
 package org.apache.brooklyn.cloudfoundry.entity;
 
 
-import java.util.Collection;
-import java.util.Map;
-import java.util.concurrent.Callable;
-import java.util.concurrent.TimeUnit;
-
-import javax.annotation.Nullable;
-
+import com.google.common.base.Functions;
+import com.google.common.base.Optional;
+import com.google.common.collect.Iterables;
 import org.apache.brooklyn.api.entity.Entity;
 import org.apache.brooklyn.api.entity.drivers.EntityDriverManager;
 import org.apache.brooklyn.api.location.Location;
@@ -49,9 +45,11 @@ import org.apache.brooklyn.util.time.Duration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.google.common.base.Functions;
-import com.google.common.base.Optional;
-import com.google.common.collect.Iterables;
+import javax.annotation.Nullable;
+import java.util.Collection;
+import java.util.Map;
+import java.util.concurrent.Callable;
+import java.util.concurrent.TimeUnit;
 
 public abstract class CloudFoundryEntityImpl extends AbstractEntity implements CloudFoundryEntity {
 

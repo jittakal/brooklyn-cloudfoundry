@@ -18,11 +18,7 @@
  */
 package org.apache.brooklyn.cloudfoundry.location;
 
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.List;
-import java.util.Map;
-
+import com.google.common.collect.Iterables;
 import org.apache.brooklyn.cloudfoundry.entity.VanillaCloudFoundryApplication;
 import org.apache.brooklyn.cloudfoundry.entity.service.VanillaCloudFoundryService;
 import org.apache.brooklyn.cloudfoundry.location.domain.VcapServiceRegistry;
@@ -34,28 +30,15 @@ import org.apache.brooklyn.util.core.config.ResolvingConfigBag;
 import org.apache.brooklyn.util.exceptions.PropagatedRuntimeException;
 import org.apache.brooklyn.util.text.Strings;
 import org.cloudfoundry.operations.CloudFoundryOperations;
-import org.cloudfoundry.operations.applications.ApplicationDetail;
-import org.cloudfoundry.operations.applications.ApplicationEnvironments;
-import org.cloudfoundry.operations.applications.ApplicationHealthCheck;
-import org.cloudfoundry.operations.applications.DeleteApplicationRequest;
-import org.cloudfoundry.operations.applications.GetApplicationEnvironmentsRequest;
-import org.cloudfoundry.operations.applications.GetApplicationRequest;
-import org.cloudfoundry.operations.applications.PushApplicationRequest;
-import org.cloudfoundry.operations.applications.RestartApplicationRequest;
-import org.cloudfoundry.operations.applications.ScaleApplicationRequest;
-import org.cloudfoundry.operations.applications.SetEnvironmentVariableApplicationRequest;
-import org.cloudfoundry.operations.applications.StartApplicationRequest;
-import org.cloudfoundry.operations.applications.StopApplicationRequest;
-import org.cloudfoundry.operations.services.BindServiceInstanceRequest;
-import org.cloudfoundry.operations.services.CreateServiceInstanceRequest;
-import org.cloudfoundry.operations.services.DeleteServiceInstanceRequest;
-import org.cloudfoundry.operations.services.GetServiceInstanceRequest;
-import org.cloudfoundry.operations.services.ServiceInstance;
-import org.cloudfoundry.operations.services.UnbindServiceInstanceRequest;
+import org.cloudfoundry.operations.applications.*;
+import org.cloudfoundry.operations.services.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.google.common.collect.Iterables;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.List;
+import java.util.Map;
 
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;

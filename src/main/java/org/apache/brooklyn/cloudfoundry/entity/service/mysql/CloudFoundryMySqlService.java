@@ -19,6 +19,7 @@
 package org.apache.brooklyn.cloudfoundry.entity.service.mysql;
 
 
+import com.google.common.annotations.Beta;
 import org.apache.brooklyn.api.catalog.Catalog;
 import org.apache.brooklyn.api.entity.ImplementedBy;
 import org.apache.brooklyn.cloudfoundry.entity.service.AfterBindingOperations;
@@ -27,8 +28,6 @@ import org.apache.brooklyn.config.ConfigKey;
 import org.apache.brooklyn.core.config.ConfigKeys;
 import org.apache.brooklyn.core.sensor.BasicAttributeSensor;
 import org.apache.brooklyn.util.core.flags.SetFromFlag;
-
-import com.google.common.annotations.Beta;
 
 @Beta
 @Catalog(name = "Vanilla CloudFoundry MySql Service")

@@ -19,9 +19,8 @@
 package org.apache.brooklyn.cloudfoundry.entity.service.mysql;
 
 
-import org.apache.brooklyn.cloudfoundry.entity.service.VanillaPaasServiceDriver;
-
 import com.google.common.annotations.Beta;
+import org.apache.brooklyn.cloudfoundry.entity.service.VanillaPaasServiceDriver;
 
 @Beta
 public interface PaasMySqlServiceDriver extends VanillaPaasServiceDriver {

@@ -18,9 +18,7 @@
  */
 package org.apache.brooklyn.cloudfoundry.entity;
 
-import java.util.List;
-import java.util.Map;
-
+import com.google.common.reflect.TypeToken;
 import org.apache.brooklyn.api.catalog.Catalog;
 import org.apache.brooklyn.api.entity.ImplementedBy;
 import org.apache.brooklyn.api.sensor.AttributeSensor;
@@ -33,9 +31,9 @@ import org.apache.brooklyn.core.sensor.Sensors;
 import org.apache.brooklyn.util.collections.MutableList;
 import org.apache.brooklyn.util.collections.MutableMap;
 import org.apache.brooklyn.util.core.flags.SetFromFlag;
-import org.apache.brooklyn.util.text.Strings;
 
-import com.google.common.reflect.TypeToken;
+import java.util.List;
+import java.util.Map;
 
 @Catalog(name = "Vanilla CloudFoundry Application entity")
 @ImplementedBy(VanillaCloudFoundryApplicationImpl.class)

@@ -18,10 +18,6 @@
  */
 package org.apache.brooklyn.cloudfoundry.location;
 
-import static com.google.common.base.Preconditions.checkNotNull;
-
-import java.util.Map;
-
 import org.apache.brooklyn.api.location.Location;
 import org.apache.brooklyn.api.location.LocationRegistry;
 import org.apache.brooklyn.api.location.LocationResolver;
@@ -31,6 +27,10 @@ import org.apache.brooklyn.core.location.BasicLocationRegistry;
 import org.apache.brooklyn.core.location.LocationConfigUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.Map;
+
+import static com.google.common.base.Preconditions.checkNotNull;
 
 public class CloudFoundryPaasLocationResolver implements LocationResolver {
 

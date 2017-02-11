@@ -18,14 +18,6 @@
  */
 package org.apache.brooklyn.cloudfoundry.location.domain;
 
-import java.util.Collection;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-
-import org.apache.brooklyn.util.collections.MutableSet;
-import org.apache.brooklyn.util.core.flags.TypeCoercions;
-
 import com.google.common.base.Optional;
 import com.google.common.base.Predicate;
 import com.google.common.collect.ArrayListMultimap;
@@ -33,6 +25,13 @@ import com.google.common.collect.Iterables;
 import com.google.common.collect.ListMultimap;
 import com.google.common.collect.Multimap;
 import com.google.common.reflect.TypeToken;
+import org.apache.brooklyn.util.collections.MutableSet;
+import org.apache.brooklyn.util.core.flags.TypeCoercions;
+
+import java.util.Collection;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 public class VcapServiceRegistry {
 

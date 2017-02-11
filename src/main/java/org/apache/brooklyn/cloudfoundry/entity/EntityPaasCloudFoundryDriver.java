@@ -19,11 +19,11 @@
 package org.apache.brooklyn.cloudfoundry.entity;
 
 
-import static com.google.common.base.Preconditions.checkNotNull;
-
 import org.apache.brooklyn.cloudfoundry.location.CloudFoundryPaasLocation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import static com.google.common.base.Preconditions.checkNotNull;
 
 public abstract class EntityPaasCloudFoundryDriver implements EntityPaasDriver {
 

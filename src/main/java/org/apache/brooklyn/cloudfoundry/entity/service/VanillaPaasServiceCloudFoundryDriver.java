@@ -18,15 +18,14 @@
  */
 package org.apache.brooklyn.cloudfoundry.entity.service;
 
-import java.util.List;
-import java.util.Map;
-
+import com.google.common.annotations.Beta;
 import org.apache.brooklyn.cloudfoundry.entity.EntityPaasCloudFoundryDriver;
 import org.apache.brooklyn.cloudfoundry.location.CloudFoundryPaasLocation;
 import org.apache.brooklyn.util.collections.MutableMap;
 import org.apache.brooklyn.util.exceptions.PropagatedRuntimeException;
 
-import com.google.common.annotations.Beta;
+import java.util.List;
+import java.util.Map;
 
 @Beta
 public class VanillaPaasServiceCloudFoundryDriver extends EntityPaasCloudFoundryDriver

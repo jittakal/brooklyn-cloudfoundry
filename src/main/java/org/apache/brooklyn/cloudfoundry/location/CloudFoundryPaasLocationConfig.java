@@ -18,11 +18,11 @@
  */
 package org.apache.brooklyn.cloudfoundry.location;
 
-import java.time.Duration;
-
 import org.apache.brooklyn.cloudfoundry.location.paas.PaasLocationConfig;
 import org.apache.brooklyn.config.ConfigKey;
 import org.apache.brooklyn.core.config.ConfigKeys;
+
+import java.time.Duration;
 
 public interface CloudFoundryPaasLocationConfig extends PaasLocationConfig {
 

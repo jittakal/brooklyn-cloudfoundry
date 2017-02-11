@@ -19,13 +19,7 @@
 package org.apache.brooklyn.cloudfoundry.entity;
 
 
-import java.io.File;
-import java.io.IOException;
-import java.net.HttpURLConnection;
-import java.net.URI;
-import java.util.List;
-import java.util.Map;
-
+import com.google.common.collect.ImmutableList;
 import org.apache.brooklyn.api.entity.drivers.downloads.DownloadResolver;
 import org.apache.brooklyn.cloudfoundry.entity.service.AfterBindingOperations;
 import org.apache.brooklyn.cloudfoundry.entity.service.VanillaCloudFoundryService;
@@ -42,7 +36,12 @@ import org.apache.brooklyn.util.text.Strings;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.google.common.collect.ImmutableList;
+import java.io.File;
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.URI;
+import java.util.List;
+import java.util.Map;
 
 public class VanillaPaasApplicationCloudFoundryDriver extends EntityPaasCloudFoundryDriver
         implements VanillaPaasApplicationDriver {

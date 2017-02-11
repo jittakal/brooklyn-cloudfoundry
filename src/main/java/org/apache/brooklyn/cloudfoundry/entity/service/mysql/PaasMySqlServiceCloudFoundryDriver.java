@@ -18,18 +18,17 @@
  */
 package org.apache.brooklyn.cloudfoundry.entity.service.mysql;
 
-import static com.google.common.base.Preconditions.checkNotNull;
+import com.google.common.annotations.Beta;
+import org.apache.brooklyn.cloudfoundry.entity.service.VanillaPaasServiceCloudFoundryDriver;
+import org.apache.brooklyn.cloudfoundry.location.CloudFoundryPaasLocation;
+import org.apache.brooklyn.util.core.ResourceUtils;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
 import java.util.Map;
 
-import org.apache.brooklyn.cloudfoundry.entity.service.VanillaPaasServiceCloudFoundryDriver;
-import org.apache.brooklyn.cloudfoundry.location.CloudFoundryPaasLocation;
-import org.apache.brooklyn.util.core.ResourceUtils;
-
-import com.google.common.annotations.Beta;
+import static com.google.common.base.Preconditions.checkNotNull;
 
 @Beta
 public class PaasMySqlServiceCloudFoundryDriver extends VanillaPaasServiceCloudFoundryDriver
