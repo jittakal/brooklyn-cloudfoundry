@@ -23,17 +23,17 @@
     <parent>
         <groupId>org.apache.brooklyn</groupId>
         <artifactId>brooklyn-downstream-parent</artifactId>
-        <version>0.11.0-SNAPSHOT</version> <!-- BROOKLYN_VERSION -->
+        <version>0.10.0-20161121.1656</version> <!-- BROOKLYN_VERSION -->
     </parent>
 
     <artifactId>brooklyn-cloudfoundry</artifactId>
     <packaging>jar</packaging>
-    <version>1.1-SNAPSHOT</version>
+    <version>1.0-SNAPSHOT</version>
 
-    <name>Brooklyn CloudFoundry Project</name>
+    <name>Brooklyn CloudFoundry project</name>
 
     <properties>
-        <brooklyn.version>0.11.0-20170126.1332</brooklyn.version>
+        <brooklyn.version>0.10.0-20161121.1656</brooklyn.version>
         <java.version>1.8</java.version>
         <cloudfoundry.client.version>2.0.0.BUILD-SNAPSHOT</cloudfoundry.client.version>
         <reactor.core.version>3.0.0.RC1</reactor.core.version>
@@ -70,7 +70,6 @@
             <groupId>org.apache.brooklyn</groupId>
             <artifactId>brooklyn-all</artifactId>
             <version>${project.parent.version}</version>
-            <scope>provided</scope>
         </dependency>
 
         <dependency>
@@ -91,14 +90,12 @@
                     <artifactId>jackson-databind</artifactId>
                 </exclusion>
             </exclusions>
-            <scope>provided</scope>
         </dependency>
 
         <dependency>
             <groupId>org.apache.brooklyn</groupId>
             <artifactId>brooklyn-api</artifactId>
             <version>${project.parent.version}</version>
-            <scope>provided</scope>
         </dependency>
 
         <dependency>
@@ -128,7 +125,6 @@
             <groupId>org.apache.brooklyn</groupId>
             <artifactId>brooklyn-logback-xml</artifactId>
             <version>${project.parent.version}</version>
-            <scope>provided</scope>
         </dependency>
 
         <dependency>
@@ -199,47 +195,6 @@
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <version>3.0.2</version>
-                <configuration>
-                    <archive>
-                        <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
-                    </archive>
-                </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>test-jar</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.felix</groupId>
-                <artifactId>maven-bundle-plugin</artifactId>
-                <version>3.0.1</version>
-                <extensions>true</extensions>
-                <executions>
-                    <execution>
-                        <id>bundle-manifest</id>
-                        <phase>process-classes</phase>
-                        <goals>
-                            <goal>manifest</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <instructions>
-                        <Import-Package>!org.python.core,!io.projectreactor*,!org.cloudfoundry*,!reactor*,*</Import-Package>
-                        <Export-Package>org.apache.brooklyn.cloudfoundry.*</Export-Package>
-                        <Bundle-SymbolicName>${project.groupId}.${project.artifactId}</Bundle-SymbolicName>
-                        <!--<Bundle-Activator>com.my.company.Activator</Bundle-Activator>-->
-                    </instructions>
-                </configuration>
-            </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
                 <version>2.4.1</version>
                 <configuration>
@@ -248,7 +203,6 @@
                         <filter>
                             <artifact>*:*</artifact>
                             <excludes>
-                                <exclude>junit:junit</exclude>
                                 <exclude>META-INF/*.SF</exclude>
                                 <exclude>META-INF/*.DSA</exclude>
                             </excludes>

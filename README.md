@@ -11,6 +11,36 @@ This project contains a Brooklyn plugin which allows Cloud Foundry-based platfor
 ##Usage
 This project provides different elements to manage the Cloud Foundry services.
 
+Steps need to follow to run with fixed apache brooklyn version 0.10.0-20161121.1656
+
+JDK - 1.8
+Apache Brooklyn Server - 0.10.0-20161121.1656
+
+Build using maven and copy jar to Brooklyn lib/patch folder, placing jar at lib/dropins causing issues
+with spring-core dependency.
+
+Working sample deployment 
+```yaml
+name: CloudFoundryPaasLocation configuration example
+location:
+  cloudfoundry:
+    provider: provider
+    identity: <user@mail.com>
+    credential: secret
+    org: org-name
+    endpoint: api.endpoint.com
+    space: space-name
+services:
+- type: org.apache.brooklyn.cloudfoundry.entity.VanillaCloudFoundryApplication
+  id: vanilla-app
+  brooklyn.config:
+    path: https://github.com/kiuby88/brooklyn-cloudfoundry/raw/master/src/test/resources/brooklyn-example-hello-world-sql-webapp-in-paas.war
+    buildpack: https://github.com/cloudfoundry/java-buildpack.git
+    memory: 1024
+    disk_quota: 2048
+    instances: 1
+```
+
 Building using maven
 ```
 mvn clean install
@@ -59,37 +89,7 @@ services:
     creationScriptTemplateUrl: https://raw.githubusercontent.com/kiuby88/brooklyn-cloudfoundry/feature/binding-string-entity/src/test/resources/chat-database.sql
 `````
 
-AMP Catalog
-```yaml
-brooklyn.catalog:
-  libraries:
-  - file:///opt/compose/blueprint/brooklyn-cloudfoundry-1.1-SNAPSHOT.jar
-  id: org.apache.brooklyn.cloudfoundry
-  itemType: template
-  version: 1.0
-  description: Brooklyn Cloudfoundry - 1.0
-  displayName: Brooklyn Cloudfoundry
-#  iconUrl: classpath:///apache.png
 
-  item:
-    services:
-    - type: org.apache.brooklyn.brooklyn-cloudfoundry:org.apache.brooklyn.cloudfoundry.entity.VanillaCloudFoundryApplication
-      id: vanilla-app
-      brooklyn.config:
-        path: https://github.com/kiuby88/brooklyn-cloudfoundry/blob/feature/binding-string-entity/src/test/resources/brooklyn-example-hello-world-sql-webapp-in-paas.war?raw=true
-        buildpack: https://github.com/cloudfoundry/java-buildpack.git
-        services:
-        - $brooklyn:component("my-service").attributeWhenReady("cloudFoundry.service.instance.name")
-        env:
-          brooklyn.example.db.url: $brooklyn:component("my-service").attributeWhenReady("service.mysql.jdbc")
-
-    - type: org.apache.brooklyn.brooklyn-cloudfoundry:org.apache.brooklyn.cloudfoundry.entity.service.mysql.CloudFoundryMySqlService
-      id: my-service
-      brooklyn.config:
-        serviceName: cleardb
-        plan: spark
-        creationScriptTemplateUrl: https://raw.githubusercontent.com/kiuby88/brooklyn-cloudfoundry/feature/binding-string-entity/src/test/resources/chat-database.sql
-```
 `VanillaCloudFoundryApplication` allows to deploy a generic application. `buildpack` property specify the required technology package that has to be installed in the instances to run the application. You can find [here](https://docs.cloudfoundry.org/buildpacks/) the official suported buildpacks. 
 
 Furthermore, `VanillaCloudFoundryApplication` allows to define the required resources to run the application by means of `memory`, `disk_quota` and `instances` properties ([here an example](https://github.com/kiuby88/brooklyn-cloudfoundry/blob/master/src/test/resources/vanilla-cf-resources-profile.yml)). This entity allows manual scaling in runtime, so modify the memory, disk or used instancescan be modified by means of Brooklyn interface ([effectors](https://brooklyn.apache.org/v/latest/concepts/configuration-sensor-effectors.html#sensors-and-effectors)).
